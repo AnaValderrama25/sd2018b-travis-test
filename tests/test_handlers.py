@@ -17,11 +17,8 @@ def user_info():
 
 
 def test_get_health(client):
-    # GIVEN ...
-    # WHEN I access to the url ...
-    # THEN ...
-    response = client.get('/health')
-    assert response.status_code == 200
+    message = handlers.get_health()
+    assert {"message": "OK"} == message
 
 
 def test_get_user_info(mocker, user_info):
